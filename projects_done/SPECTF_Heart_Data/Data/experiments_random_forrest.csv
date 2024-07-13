@@ -1,0 +1,75 @@
+Experiments Random-Forrest:
+
+#### Result without standard-scaler: ####
+
+1.
+params = { <br>
+    "pca__n_components" : np.arange(1,10), <br>
+    "rf__n_estimators" : np.arange(100, 200, 10) <br>
+} <br>
+Best parameters: {'pca__n_components': 6, 'rf__n_estimators': 150} <br>
+Best training-score: 0.786 <br>
+Score on test data: 0.785 <br>
+ <br>
+2.
+params = { <br>
+    "pca__n_components" : np.arange(1,10), <br>
+    "rf__n_estimators" : np.arange(140, 160, 1) <br>
+} <br>
+Best parameters: {'pca__n_components': 6, 'rf__n_estimators': 156} <br>
+Best training-score: 0.798 <br>
+Score on test data: 0.774 <br>
+ <br>
+3.<br>
+params = { <br>
+    "pca__n_components" : np.arange(1,10), <br>
+    "rf__n_estimators" : np.arange(100, 200, 10), <br>
+    "rf__max_depth" : np.arange(2, 8), <br>
+    "rf__max_samples" : np.arange(10, 80, 10) <br>
+} <br>
+Best parameters: {'pca__n_components': 7, 'rf__max_depth': 5, 'rf__max_samples': 10, 'rf__n_estimators': 120} <br>
+Best training-score: 0.798 <br>
+Score on test data: 0.737 <br>
+ <br>
+4.<br>
+params = { <br>
+    "pca__n_components" : np.arange(5,8,2), <br>
+    "rf__n_estimators" : np.arange(110, 130, 1), <br>
+    "rf__max_depth" : np.arange(2, 8), <br>
+    "rf__max_samples" : np.arange(10, 20, 2) <br>
+} <br>
+Best parameters: {'pca__n_components': 5, 'rf__max_depth': 6, 'rf__max_samples': 10, 'rf__n_estimators': 122} <br>
+Best training-score: 0.823 <br>
+Score on test data: 0.720 <br>
+ <br>
+Summary: overfitting since run 1. 
+<br>
+5.<br>
+params = {<br>
+    "pca__n_components" : [6],<br>
+    "rf__n_estimators" : [150],<br>
+}<br>
+Best parameters: {'pca__n_components': 6, 'rf__n_estimators': 150}<br>
+Best training-score: 0.771<br>
+Score on test data: 0.785<br>
+Accuracy score: 0.785<br>
+
+#### Result with standard-scaler: ####
+1.<br>
+params = { <br>
+     "pca__n_components" : np.arange(1,10), <br>
+     "rf__n_estimators" : np.arange(140, 160, 1) <br>
+ } <br>
+Best parameters: {'pca__n_components': 5, 'rf__n_estimators': 141} <br>
+Best training-score: 0.823 <br>
+Score on test data: 0.742 <br>
+2. <br>
+params = { <br>
+    "pca__n_components" : np.arange(5,8,2), <br>
+    "rf__n_estimators" : np.arange(110, 130, 1), <br>
+    "rf__max_depth" : np.arange(2, 8), <br>
+    "rf__max_samples" : np.arange(10, 20, 2) <br>
+} <br>
+Best parameters: {'pca__n_components': 5, 'rf__max_depth': 2, 'rf__max_samples': 12, 'rf__n_estimators': 120} <br>
+Best training-score: 0.823 <br>
+Score on test data: 0.737 <br>

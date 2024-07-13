@@ -1,0 +1,39 @@
+Applied Machine Learning Process:
+
+Heart Data
+
+Problem Definition:
+-------------------
+1. Detect conditions for a heart desease based on some metrics/characteristics that have been isolated by some experts. These characteristics are the features in the data-set.
+2. Benefits of solving the problem are given by the benefit of a second opinion for the human expert provided by the algorithm. Goal is to better recognize heart desease condition.
+3. According to the paper by ??? accompanying the data, the features have been engineered a descision trees and rule-generating heuristics, i.e. by mimiking the human expert decision-making process. 
+Explainability is important. Now one could argue since the data-features have been generated with explainability in mind, it is not important to have an explainable, understandable data-evaluation process, i.e. it is feasible to use random forrests and the like for these data. Another possibility would be to use an interpretable approach like a single decision-tree and compare the thus "explained-variance" with the variance of a random-forrest or other algorithm with probably higher prediction-power. One would end up with something like "explainable-variance", "ensemble-magic" and "unexplained variance".
+
+Data Preparation:
+-----------------
+
+- check for missing values
+- check for feature importance by linear regression modelling or the same feature of other algorithms
+- in tabular data prediction Kaggle competition, there were criteria for feature selection: use those here
+- transform data: remove unexplainative features, use standard scaler, pca
+
+Spot Check Algorithms:
+----------------------
+- use a set of standard algorithm families, select the most promising ones for further investigation: done
+- use feature selection, standard scaler
+
+Improve Results:
+----------------
+- use various cluster algorithms
+- use gridsearch for hyper-parameter search
+- ensemble methods: done (or are there more?)
+- extreme feature engineering: attribute decomposition, aggregation ??? polynomial features??
+
+Present Results:
+----------------
+1. Context: clinical heart desease diagnosis
+2. Question: possibility to automatically predict heart desease condition form the extracted features
+3. Solution: present trained algorithms to do just that with a certain mean accuracy and variance
+4. Findings:
+5. Limitations:
+6. Conclusion:

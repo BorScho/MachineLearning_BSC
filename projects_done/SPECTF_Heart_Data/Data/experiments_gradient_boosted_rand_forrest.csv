@@ -1,0 +1,65 @@
+Experiments  with GradientBoostingClassifier
+
+
+1.
+<br>
+boost_pipe = Pipeline([ <br>
+    ("ssc", StandardScaler()),<br>
+    ("pca", PCA()),<br>
+    ("boost", GradientBoostingClassifier()),<br>
+])<br>
+<br>
+params={<br>
+    "pca__n_components" : np.arange(1,10),<br>
+    "boost__n_estimators" : np.arange(50, 120, 10),<br>
+    "boost__max_depth" : [2, 3, 4],<br>
+    "boost__min_samples_leaf" : [4, 5],<br>
+}<br>
+Best parameters: {'boost__max_depth': 2, 'boost__min_samples_leaf': 4, 'boost__n_estimators': 60, 'pca__n_components': 5}<br>
+Best training-score: 0.811<br>
+Score on test data: 0.780<br>
+Accuracy score: 0.780<br>
+<br>
+-----<br>
+2.
+<br>
+boost_pipe = Pipeline([ <br>
+    #("ssc", StandardScaler()), <br>
+    ("pca", PCA()), <br>
+    ("boost", GradientBoostingClassifier()), <br>
+]) <br>
+ <br>
+params={ <br>
+    "pca__n_components" : np.arange(1,10), <br>
+    "boost__n_estimators" : np.arange(50, 120, 10), <br>
+    "boost__max_depth" : [2, 3, 4], <br>
+    "boost__min_samples_leaf" : [4, 5], <br>
+} <br>
+Best parameters: {'boost__max_depth': 2, 'boost__min_samples_leaf': 5, 'boost__n_estimators': 60, 'pca__n_components': 6} <br>
+Best training-score: 0.773 <br>
+Score on test data: 0.769 <br>
+Accuracy score: 0.769 <br>
+ <br>
+-----<br>
+3.
+<br>
+boost_pipe = Pipeline([ <br>
+    ("ssc", StandardScaler()), <br>
+    ("pca", PCA()), <br>
+    ("boost", GradientBoostingClassifier()), <br>
+]) <br>
+ <br>
+params={ <br>
+    "pca__n_components" : np.arange(1,10), <br>
+    "boost__n_estimators" : np.arange(50, 120, 10), <br>
+    "boost__max_depth" : [2, 3, 4], <br>
+    "boost__min_samples_leaf" : [5, 6], <br>
+} <br>
+Best parameters: {'boost__max_depth': 2, 'boost__min_samples_leaf': 6, 'boost__n_estimators': 80, 'pca__n_components': 5} <br>
+Best training-score: 0.823 <br>
+Score on test data: 0.774 <br>
+Accuracy score: 0.774 <br>
+ <br>
+ -------
+ ### Summary: ###
+ Even if case 1. overfits the dataset, the accuracy-score ist highest.
